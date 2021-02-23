@@ -1,0 +1,26 @@
+#!/bin/bash
+Rscript MonteCarloExperiment.r
+Rscript analyze_MonteCarlo.r
+Rscript summary.R
+Rscript figureD1_2.r
+Rscript figureD3.r
+Rscript model3_bootstrap.r
+Rscript model4_fit.R
+Rscript model4_bootstrap.r
+Rscript model5_fit.R
+Rscript model5_bootstrap.r
+Rscript model6_fit.R
+Rscript model6_bootstrap.r
+Rscript model8_fit.R
+Rscript model8_bootstrap.r
+Rscript model9_fit.R
+Rscript model9_bootstrap.r
+Rscript model10_fit.R
+Rscript model10_bootstrap.r
+Rscript model11_fit.R
+Rscript model11_bootstrap.r
+Rscript figureD4.r
+Rscript MonteCarloExperiment_selection.r
+Rscript analyze_MonteCarlo_selection.r
+Rscript model0_fit.R
+Rscript modelfit.r
