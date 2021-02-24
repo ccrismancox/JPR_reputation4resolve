@@ -39,7 +39,7 @@ deTest <- DEoptim(llik, lower, upper,
                                                    "f2.given"),
                                           steptol=100000))
 outerit <- outerit+ 1
-save(list="deTest", file="model0_currentIT.rdata") 
+save(list="deTest", file="model0start_currentiteration.rdata") 
 
 #Additional iterations as needed
 while(nrow(deTest$member$bestmemit)==500000){
@@ -60,7 +60,7 @@ while(nrow(deTest$member$bestmemit)==500000){
                                             initialpop=deTest$member$pop,
                                             steptol=100000))
   outerit <- outerit+ 1
-  save(list="deTest", file="model0_currentIT.rdata") 
+  save(list="deTest", file="model0start_currentiteration.rdata") 
 }
 # save.image("model0_startvalues.rdata") #only if regenerating starting values
 

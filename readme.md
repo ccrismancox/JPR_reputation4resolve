@@ -36,3 +36,48 @@ Starting values are very important for the optimization. The folder labeled `sta
     Matrix products: default
     BLAS:   /usr/lib/x86_64-linux-gnu/openblas/libblas.so.3
     LAPACK: /usr/lib/x86_64-linux-gnu/libopenblasp-r0.2.20.so
+
+## Files and contents
+
+### Folders 
+
+- `Data` Contains data files used in the analysis
+    - `FearonLaitin.dta` Fearon and Laitin's 2003 APSR data
+    - `fearonOutOfSample.csv` Case from Fearon's 2004 JPR that are not in UCDP.
+    - `fullDataSet.csv` The main data set used in this paper
+    - `NMC_v4_0.csv` Correlates of War NMC data
+    - `woa_USE*` A series of `Rdata` files that are used to fit the various models. Each one is designed for a specific robustness check. See the appendix for more detials.
+- `functions` Contains additional functions used in the project
+    - `avdata.r` A function to compute "average" data profile
+    - `deoptimWrap.r` A function to customize how `DEoptim` is use. Mainly used to control the parallel options
+    - `estimationFunctions2018.R` loglikelihood and other functions
+- `startingvalues` A folder containing code to produce and save starting values for each model
+    - `model*_startvalues.R` Code to produce starting values for each model 0-11
+    - `model*start_currentIT.rdata` File produced along the way the save the current output of `DEoptim`
+    - `model*startvalues.rdata` File that contains the produced starting values
+ 
+### Main files
+
+- `analyze_MonteCarlo.r` Analyze the main Monte Carlo simulation
+- `analyze_MonteCarlo_section.r` Analyze the Monte Carlo with missing 0s
+- `codebook.md` description file for `fullDataSet.csv`
+- `figure*.pdf` Figure in PDF format
+- `figure*.R` Code to produce the figure
+- `JPR_logFile_appendix.txt` Logged output from running the appendix files
+- `JPR_logFile_mainText.txt` Logged output from running the main text files
+- `MCresult_main.pdf` Figure A.1 in pdf format
+- `model*_fit.R` Code to fit models 0-11. Consdult the bash (.sh) files for the ordering and the log files to see which files match which Tables. The main text models are 1, 2, and 7. Models 3-6 and 8-11 are in the Appendix (in order) and model 0 is used only for model fit comparisions.
+- `model*_bootstrap.r` Bootstrap code for models 1-11.
+- `model*_bootstrap.rdata` Saved bootstrap results
+- `modelfit.r` Code for model fit exercises (Appendix F)
+- `MonteCarloExperiment.r` Code to run the Monte Carlo simulation
+- `MonteCarloExperiment_selection.r` Code to run the Monte Carlo simulation with missing cases
+- `MonteCarloResults.rdata` Saved results of the main Monte Carlo
+- `MonteCarloResults_section.rdata` Saved results of the Monte Carlo simulation with missing cases
+- `nullModel.Rdata` Save results of Model 0. A null model used for model fit
+- `readme.md` this file
+- `replicate.sh` the bash script that runs all the files used in the main analysis.  The text output is recorded in `JPR_logFile_mainText.txt`
+- `replicate_appendix.sh` the bash script that runs all the files used in the online appendix.  The text output is recorded in `JPR_logFile_appendix.txt`
+- `summary.R` Produce summary statistics table in Appendix C
+
+
